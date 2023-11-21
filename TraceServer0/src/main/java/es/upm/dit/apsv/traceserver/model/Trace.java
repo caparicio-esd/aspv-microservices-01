@@ -15,19 +15,19 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @ToString
 public class Trace {
-
+    
     @Id
     private String traceId;
-
+    
     private String truck;
-
+    
     private long lastSeen;
-
+    
     private double lat;
-
+    
     private double lng;
-
-
+    
+    
     public Trace(String traceId, String truck, long lastSeen, double lat, double lng) {
         this.traceId = traceId;
         this.truck = truck;

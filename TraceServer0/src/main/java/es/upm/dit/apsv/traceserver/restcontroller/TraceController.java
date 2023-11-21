@@ -11,35 +11,35 @@ import java.util.List;
 @RestController
 public class TraceController {
     public static final Logger log = LoggerFactory.getLogger(TraceController.class);
-
+    
     private final TraceRepository traceRepository;
-
+    
     public TraceController(TraceRepository traceRepository) {
         this.traceRepository = traceRepository;
     }
-
+    
     @GetMapping("/traces")
     public List<Trace> all() {
         log.info("Retrieving all traces");
         return (List<Trace>) traceRepository.findAll();
     }
-
+    
     @PostMapping("/traces")
     public Trace createTrace(@RequestBody Trace newTrace) {
         log.info("Creating new trace");
         return traceRepository.save(newTrace);
     }
-
+    
     @GetMapping("/traces/{traceId}")
     public Trace one(@PathVariable String traceId) {
         log.info("Attempting to find a trace by id");
         return traceRepository.findById(traceId).orElseThrow();
     }
-
+    
     @PutMapping("/traces/{id}")
     public Trace replaceTrace(@RequestBody Trace replacingTrace, @PathVariable String id) {
         log.info("Attempting to replace a trace by id");
-
+        
         return traceRepository.findById(id).map(Trace -> {
             log.info("Found trace by id, updating...");
             Trace.setTraceId(replacingTrace.getTraceId());
@@ -54,11 +54,11 @@ public class TraceController {
             return traceRepository.save(replacingTrace);
         });
     }
-
+    
     @DeleteMapping("/traces/{traceId}")
     public void deleteByTrace(@PathVariable String traceId) {
         log.warn("Deleting trace by id");
         traceRepository.deleteById(traceId);
     }
-
+    
 }

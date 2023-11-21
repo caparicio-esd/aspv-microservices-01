@@ -7,5 +7,6 @@ import java.util.Optional;
 
 public interface TransportationOrderRepository extends CrudRepository<TransportationOrder, String> {
     TransportationOrder findByTruckAndSt(String truck, int st);
+    
     Optional<TransportationOrder> findByTruck(String truck);
 }
