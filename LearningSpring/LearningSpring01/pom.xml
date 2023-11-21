@@ -11,8 +11,8 @@
     <groupId>esd.carlos</groupId>
     <artifactId>LearningSpring01</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>LearningSpring</name>
-    <description>LearningSpring</description>
+    <name>LearningSpring01</name>
+    <description>LearningSpring01</description>
     <properties>
         <java.version>17</java.version>
     </properties>
