@@ -7,11 +7,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
-
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -20,15 +17,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.util.ResourceUtils;
 
 
-
-
 @SpringBootApplication
 public class GPSEnabledTrucksSimulatorApplication {
-
 	private static final Logger log = LoggerFactory.getLogger(GPSEnabledTrucksSimulatorApplication.class);
-
 	private static int n = 0;
-	private static List<String> messages =new ArrayList<String>();
+	private static List<String> messages =new ArrayList<>();
 
 	public static void main(String[] args) throws IOException {
 		SpringApplication.run(GPSEnabledTrucksSimulatorApplication.class, args);

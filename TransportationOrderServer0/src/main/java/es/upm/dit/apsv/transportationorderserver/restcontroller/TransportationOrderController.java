@@ -37,7 +37,7 @@ public class TransportationOrderController {
     @GetMapping("/transportationorders/{truckId}")
     public ResponseEntity<TransportationOrder> getByTruck(@PathVariable String truckId) {
         log.info("Attempting to get transportation by truck");
-        Optional<TransportationOrder> truck = transportationOrderRepository.findById(truckId);
+        Optional<TransportationOrder> truck = transportationOrderRepository.findByTruck(truckId);
         if (truck.isPresent()) {
             log.info("Retrieving transportation by truck");
             return new ResponseEntity<>(truck.get(), HttpStatus.OK);

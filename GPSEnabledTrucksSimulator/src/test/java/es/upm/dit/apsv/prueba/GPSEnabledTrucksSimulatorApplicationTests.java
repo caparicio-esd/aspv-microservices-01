@@ -5,9 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 class GPSEnabledTrucksSimulatorApplicationTests {
-
 	@Test
 	void contextLoads() {
 	}
-
 }
